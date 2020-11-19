@@ -1,0 +1,414 @@
+/*清楚默认样式*/
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+body {
+	background-color: #efefef;
+}
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+/*原子类--内容宽度*/
+.container {
+	width: 1128px;
+	margin: 0 auto;
+}
+/*原子类--按钮样式*/
+.btn {
+	padding: 6px 20px;
+	border-radius: 4px;
+	color: white;
+	background: red;
+	text-align: center;
+	font-size: 14px;
+	position: relative;
+	/*行内块显示*/
+	display: inline-block;
+}
+.btn::before {
+	content: "";
+	padding: 0;
+	border: 5px solid transparent;
+	border-left-color: white;
+	position: absolute;
+	top: 11px;
+	right: 8px;
+}
+.btn::after {
+	content: "";
+	padding: 0;
+	border: 5px solid transparent;
+	border-left-color: red;
+	position: absolute;
+	top: 11px;
+	right: 10px;
+}
+
+/*顶部状态栏*/
+.status {
+	height: 28px;
+	line-height: 28px;
+	font-size: 14px;
+	color: white;
+	background-image: -webkit-linear-gradient(top,#037ecc,#1bbae2)
+}
+.status .container {
+	display: flex;
+	/*flex-direction: row-reverse;*/
+	justify-content: flex-end;
+}
+.status span {
+	/*文本中保留空白*/
+	white-space: pre;
+}
+.status .text {
+	margin-right: 15px;
+}
+.status .user {
+	width: 25px;
+	position: relative;
+}
+.status .user::before {
+	content: "";
+	width: 4px;
+	height: 4px;
+	position: absolute;
+	left: 12px;
+	top: 8px;
+	border-radius: 50%;
+	border: 1px solid #fff;
+}
+.status .user::after {
+	content: "";
+	width: 8px;
+	height: 4px;
+	position: absolute;
+	left: 10px;
+	top: 13px;
+	border-radius:  50% 50% 0 0 / 100% 100% 0 0;
+	border: 1px solid #fff;
+	border-bottom-color: transparent; 
+}
+
+
+
+/*导航部分*/
+.nav {
+	background: white;
+	height: 50px;
+	line-height: 50px;
+	/*投影*/
+	box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+}
+.nav .container {
+	display: flex;
+	align-items: center;
+}
+.nav img {
+	width: 106px;
+	height: 22px;
+	margin-right: 60px;
+	flex: 0;
+}
+.nav ul {
+	display: flex;
+	/*挤满空间,让input去右边*/
+	flex: 1;
+}
+.nav li {
+	margin-right: 55px;
+}
+.nav .search {
+	position: relative;
+}
+.nav .search input {
+	width: 173px;
+	padding: 6px 16px;
+	/*清除外边框*/
+	outline-style: none;
+	/*圆角*/
+	border-radius: 150px;
+	border: 1px solid #999;
+	flex: 0;
+}
+.nav .search span {
+	width: 50px;
+	height: 17px;
+	line-height: 17px;
+	font-size: 12px;
+	background-color: #ddd;
+	position: absolute;
+	top: 18px;
+	text-align: center;
+}
+.nav .search span.span1{	
+    right: 36px;
+}
+.nav .search span.span2{
+	right: 96px;
+}
+.nav .search::before {
+	content: "";
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border: 1px solid gray;
+	top: 18px;
+	right: 16px;
+	border-radius: 50%;
+}
+.nav .search::after {
+	content: "";
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	border: 1px solid transparent;
+	border-bottom-color: gray;
+	top: 23px;
+	right: 7px;
+	transform: rotate(45deg);
+}
+
+
+
+/*banner部分*/
+.banner .container {
+	height: 550px;
+	background: url("./images/banner.jpg") no-repeat center top;
+	position: relative;
+	margin-top: 8px;
+	/*border-bottom: 2px solid skyblue;*/
+}
+.banner .arrow {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	background: url("./images/slide.png") no-repeat;
+	top: 50%;
+	/*优先级问题
+	 left的优先级高于right
+	 必须先right 后面的left才能生效*/
+	right: 30px;
+}
+.banner .arrow1 {
+    left: 30px;
+}
+
+
+/*line部分*/
+.line .container {
+	height: 20px;
+	/*border: 2px solid green;*/
+	position: relative;
+	top: -20px;
+	overflow: hidden;
+}
+.line .thread {
+	border: 20px solid transparent;
+	border-right-width: 1300px;
+	border-right-color: skyblue;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+.line .thread1 {
+	border: 20px solid transparent;
+	border-left-width: 1300px;
+	border-left-color: skyblue;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+
+/*phone-banner部分*/
+.phone .container {
+	text-align: center;
+	margin-top: -20px;
+	/*border: 2px solid skyblue;*/
+	background: white;
+}
+.phone h2 {
+	padding: 40px 0 30px;
+	text-align: center;
+	font-size: 36px;
+	font-weight: normal;
+}
+
+.phone .select-list {
+	/*border: 1px solid #000;*/
+	display: flex;
+	justify-content: center;
+
+}
+.phone select {
+	height: 30px;
+	width: 140px;
+	margin: 10px;
+}
+.phone .content {
+	margin-top: 60px;
+	display: flex;
+	justify-content: center;
+}
+.phone .content img {
+	width: 450px;
+	height: 550px;
+	margin-right: 90px;
+	margin-bottom: 30px;
+}
+.phone .content .info {
+	padding: 75px 0 20px;
+	flex-basis: 450px;
+	text-align: left;
+}
+.phone .content .info h3 {
+	font-size: 30px;
+	padding: 30px 0 20px;
+}
+.phone .content .info h3 span {
+	border: 1px solid #000;
+	border-radius: 3px;
+	font-size: 12px;
+	position: relative;
+	top: -12px;
+	left: -10px;
+	padding: 1px 2px;
+
+}
+.phone .content .info .intro {
+	font-size: 20px;
+}
+.phone .content .info p {
+	line-height: 40px;
+}
+.phone .content .info .btn {
+	margin-top: 40px;
+}
+
+
+/*手机列表部分*/
+.phone-list {
+	margin-top: -20px;
+}
+.phone-list .title {
+	margin: 25px 0 15px;
+	height: 30px;
+	padding-left: 5px;
+	line-height: 30px;
+	font-weight: normal;
+	font-size: 25px;
+	border-left: 3px solid skyblue;
+}
+.phone-list .title:after {
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(0,0,0,0.5);
+	content: "更多>";
+	position: relative;
+	float: right;
+}
+
+.phone-list .list{
+	text-align: center;
+	/*border: 1px solid #000;*/
+	display: flex;
+	justify-content: space-between;
+	background-color: rgba(200,200,200,0.5);
+	height: 400px;
+
+}
+.phone-list .list div.list1 {
+	padding: 50px 0;
+	width: 260px;
+	background: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+.phone-list .list div p {
+	margin-top: 10px;
+	font-weight: normal;
+	color: rgba(0,0,0,0.5);
+}
+.phone-list .list div img {
+	width: 140px;
+	height: 160px;
+	margin-top: 30px;
+	
+}
+.phone-list .list div.list1 .btn {
+	width: 60px;
+	margin-top: 40px;
+}
+.phone-list .list div.list1 .ickt {
+	position: relative;
+	font-size: 14px;
+	top: -255px;
+	left: 92px;
+	color: white;
+	background: orange;
+	padding: 10px;
+	border-radius: 50%;
+}
+.phone-list .list div.list1 .ickt1 {
+	background: blue;
+}
+
+.footer-banner {
+	margin-top: 5px;
+	height: 560px;
+	background: url("./images/pc.jpg"); 
+}
+
+
+.footer {
+	margin-top: 10px;
+	background: white;
+}
+.footer p ,
+.footer span {
+	font-size: 12px;
+}
+.footer .container {
+	padding-top: 50px;
+}
+.footer .intro {
+	display: flex;
+	justify-content: space-between;
+}
+.footer .intro li {
+	font-size: 14px;
+	color: rgba(0,0,0,0.5);
+	margin: 7px 0;
+}
+.footer li strong {
+	color: black;
+	font-size: 16px;
+}
+.footer .intro .thread {
+	height: 280px;
+	width: 1px;
+	background: rgba(0,0,0,0.5);
+}
+.footer .intro .custom {
+	text-align: left;
+	padding-top: 30px;
+}
+.footer .intro .custom .service{
+	display: flex;
+	margin-bottom: 10px;
+}
+.footer .intro .custom h2 {
+	margin-bottom: 10px;
+}
+
+.footer .copy {
+	margin-top: 80px;
+	text-align: center;
+}
